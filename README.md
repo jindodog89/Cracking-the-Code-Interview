@@ -1,5 +1,4 @@
 # Cracking-the-Code-Interview
-A computer science major at Western Washington University.
 
 This repository is for practicing coding questions from the book, "Cracking the Code Interview"
 The main goal to achieve is to reach a high level of comprehension in data structures.
