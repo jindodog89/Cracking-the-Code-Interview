@@ -1,0 +1,36 @@
+/*
+Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+
+Node RemoveDuplicates(Node head) {
+  // This is a "method-only" submission. 
+  // You only need to complete this method.
+    if(head != null && head.next != null){
+        ArrayList<Integer> obj = new ArrayList<Integer>();
+        Node tempNode = head;
+        while(tempNode != null){
+            obj.add(tempNode.data);
+            tempNode = tempNode.next;
+        }
+        HashSet<Integer> hashSet = new HashSet<Integer>();
+        hashSet.addAll(obj);
+        obj.clear();
+        obj.addAll(hashSet);
+
+        Node tempNode1 = new Node();
+        tempNode1.data = obj.get(0);
+        head = tempNode1;
+        int a = 1;
+        while(a <= obj.size()-1){
+            tempNode1.next = new Node();
+            tempNode1.next.data = obj.get(a);
+            tempNode1 = tempNode1.next;
+            a++;
+        }
+    }
+    return head;
+}
