@@ -1,0 +1,37 @@
+/*
+  Reverse a linked list and return pointer to the head
+  The input list will have at least one element  
+  Node is defined as  
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+    // This is a "method-only" submission. 
+    // You only need to complete this method. 
+Node Reverse(Node head) {
+    if(head != null && head.next != null){
+        //if elements are more than 2
+        ArrayList<Integer> al=new ArrayList<Integer>();
+        Node tempNode = head;
+        //copy to arraylist
+        while(tempNode != null){
+            al.add(tempNode.data);
+            tempNode = tempNode.next;
+        }
+        //copy back, reverse.
+        int tempLength = al.size()-2;
+        Node tempNode2 = new Node();
+        tempNode2.data = al.get(al.size()-1);
+        head = tempNode2;
+        while(tempLength != -1){
+            tempNode2.next = new Node();    
+            tempNode2 = tempNode2.next;
+            //tempNode2 = new Node();
+            tempNode2.data = al.get(tempLength);
+            //tempNode2 = al.get(tempLength);
+            tempLength--;
+        }
+    }
+    return head;
+}
